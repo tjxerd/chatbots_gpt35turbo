@@ -6,6 +6,23 @@ function Session(type_id, user_id)  {
     this.user_id = user_id;
 }
 
+function switchChatbot() {
+    var baseUrl = window.location.origin;
+    var url1 = baseUrl + "/question/1/chat";
+    var url2 = baseUrl + "/question/2/chat";
+  
+    if (window.location.href === url1) {
+        window.location.href = url2;
+    } else {
+        window.location.href = url1;
+    }
+}
+
+window.onload = function() {
+    var baseUrl = window.location.origin;
+    var url1 = baseUrl + "/question/1/chat";
+}
+
 $(document).ready(function() {
     session = session_from_url();
     get_info();
